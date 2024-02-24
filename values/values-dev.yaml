@@ -1,0 +1,4 @@
+envGroup: nonprod
+envAlias: dev
+onixLegacyApiDomain: onix-legacy-api.acd-np.its-software-services.com
+onixRestApiDomain: onix-rest-api.acd-np.its-software-services.com

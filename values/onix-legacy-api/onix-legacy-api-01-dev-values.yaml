@@ -1,0 +1,13 @@
+onix-legacy-api:
+  pods:
+    replicas: 1
+
+    resources:
+      limits:
+        cpu: 30m
+        memory: 128Mi
+      requests:
+        cpu: 15m
+        memory: 64Mi
+
+    env: []

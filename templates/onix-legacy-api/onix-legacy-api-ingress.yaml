@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: onix-legacy-api-ing
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 50m
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "86400"
+    nginx.ingress.kubernetes.io/proxy-next-upstream-tries: "10"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "86400"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "86400"
+    nginx.ingress.kubernetes.io/proxy-stream-next-upstream-tries: "0"
+    nginx.ingress.kubernetes.io/proxy_next_upstream_timeout: "16"
+    nginx.ingress.kubernetes.io/proxy_next_upstream_tries: "3"
+    nginx.org/client-max-body-size: 50m
+    nginx.org/proxy-connect-timeout: "86400"
+    nginx.org/proxy-read-timeout: "86400"
+    nginx.org/proxy-send-timeout: "86400"
+spec:
+  ingressClassName: svc-nginx
+  rules:
+  - host: "{{ .Values.onixLegacyApiDomain }}"
+    http:
+      paths:
+      - pathType: ImplementationSpecific
+        path: "/"
+        backend:
+          service:
+            name: onix-{{ .Values.envAlias }}-onix-legacy-api-ing
+            port:
+              number: 80

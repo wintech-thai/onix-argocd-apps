@@ -1,0 +1,5 @@
+
+onix-legacy-api:
+  pods:
+    image:
+      tag: "<<image-tag>>"
