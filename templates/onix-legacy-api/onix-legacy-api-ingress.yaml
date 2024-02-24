@@ -16,7 +16,7 @@ metadata:
     nginx.org/proxy-read-timeout: "86400"
     nginx.org/proxy-send-timeout: "86400"
 spec:
-  ingressClassName: svc-nginx
+  ingressClassName: nginx
   rules:
   - host: "{{ .Values.onixLegacyApiDomain }}"
     http:
