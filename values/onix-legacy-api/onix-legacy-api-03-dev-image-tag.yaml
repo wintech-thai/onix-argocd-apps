@@ -1,0 +1,6 @@
+
+onix-legacy-api:
+  pods:
+    image:
+      tag: "v0.0.2"
+# Thu Feb 22 06:33:20 UTC 2024

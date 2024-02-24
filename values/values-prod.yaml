@@ -1,0 +1,4 @@
+envGroup: production
+envAlias: prod
+onixLegacyApiDomain: onix-legacy-api.acd.its-software-services.com
+onixRestApiDomain: onix-rest-api.acd.its-software-services.com

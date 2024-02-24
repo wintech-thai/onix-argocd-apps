@@ -1,0 +1,8 @@
+postgresql:
+  enabled: true
+  fullnameOverride: postgresql
+  auth:
+    database: onix
+    existingSecret: postgres-secret
+    secretKeys:
+      adminPasswordKey: adminPasswordKey

@@ -1,0 +1,25 @@
+
+onix-legacy-api:
+  enabled: true
+  nameOverride: onix-legacy-api
+
+  ingress:
+    enabled: false
+
+  podDisruptionBudget:
+    enabled: false
+
+  pods:
+    controller: deployment
+    image:
+      name: asia-southeast1-docker.pkg.dev/its-artifact-commons/onix/onix-legacy-api
+    imagePullSecrets:
+      - name: gar-image-pull # TODO : use External-Secret to create this
+
+  service:
+    enabled: true
+    ports:
+      - port: 80
+        targetPort: 80
+        protocol: TCP
+        name: http
