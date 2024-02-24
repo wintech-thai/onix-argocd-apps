@@ -25,6 +25,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: onix-{{ .Values.envAlias }}-onix-legacy-api-ing
+            name: onix-{{ .Values.envAlias }}-onix-legacy-api
             port:
               number: 80
