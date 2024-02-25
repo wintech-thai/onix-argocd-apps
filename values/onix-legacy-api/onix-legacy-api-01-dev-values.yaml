@@ -21,16 +21,16 @@ onix-legacy-api:
         value: "xxxxx"
 
       - name: ONIX_SESSION_DIR
-        value: "xxxxx"
+        value: "/wis/data/sessions"
 
       - name: ONIX_WIP_DIR
-        value: "xxxxx"
+        value: "/wis/data/wip"
 
       - name: ONIX_LOCK_DIR
-        value: "xxxxx"
+        value: "/wis/data/locked"
 
       - name: ONIX_STORAGE_DIR
-        value: "xxxxx"
+        value: "/wis/data/storage"
 
       - name: ONIX_DSN
         value: "dbname=onix;host=postgresql-svc;port=5432"
