@@ -18,7 +18,7 @@ onix-legacy-api:
         value: "false"
 
       - name: POST_PARAM_NAME
-        value: "xxxxx"
+        value: "DBOSOBJ"
 
       - name: ONIX_SESSION_DIR
         value: "/wis/data/sessions"
