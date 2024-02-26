@@ -10,6 +10,21 @@ onix-legacy-api:
     enabled: false
 
   pods:
+    initContainers:
+      - name: volume-dirs-init-cntr
+        image: busybox:1.35
+        command:
+        - "/bin/mkdir"
+        args:
+        - "-p"
+        - "/wis/data/wip"
+        - "/wis/data/locked"
+        - "/wis/data/storage"
+        - "/wis/data/sessions"
+        volumeMounts:
+        - name: data-dir
+          mountPath: "/wis/data"
+
     controller: deployment
     image:
       name: asia-southeast1-docker.pkg.dev/its-artifact-commons/onix/onix-legacy-api
@@ -17,10 +32,10 @@ onix-legacy-api:
       - name: gar-image-pull
 
     volumeMounts:
-      - name: storage-dir
-        mountPath: /wis/data/storage
+      - name: data-dir
+        mountPath: /wis/data
     volumes:
-      - name: storage-dir
+      - name: data-dir
         persistentVolumeClaim:
           claimName: onix-data
 
