@@ -4,10 +4,10 @@ onix-legacy-api:
 
     resources:
       limits:
-        cpu: 50m
+        cpu: 150m
         memory: 256Mi
       requests:
-        cpu: 30m
+        cpu: 100m
         memory: 128Mi
 
     env:
@@ -36,7 +36,7 @@ onix-legacy-api:
         value: "dbname=onix;host=postgresql;port=5432"
 
       - name: ONIX_DB_USERNAME
-        value: "postgres"
+        value: "onix_prod_acd_acdesign"
 
       - name: ONIX_DB_PASSWORD
         valueFrom:
