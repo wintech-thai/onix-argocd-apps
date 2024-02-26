@@ -33,7 +33,7 @@ onix-legacy-api:
         value: "/wis/data/storage"
 
       - name: ONIX_DSN
-        value: "dbname=onix;host=postgresql;port=5432"
+        value: "dbname=onix_prod_acd_acdesign;host=postgresql;port=5432"
 
       - name: ONIX_DB_USERNAME
         value: "onix_prod_acd_acdesign"
