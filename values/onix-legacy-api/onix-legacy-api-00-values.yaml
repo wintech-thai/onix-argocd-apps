@@ -12,7 +12,8 @@ onix-legacy-api:
   pods:
     securityContext:
       fsGroup: 69690 # uid -g apache2
-
+    strategy:
+      type: Recreate
     initContainers:
       - name: volume-dirs-init-cntr
         image: busybox:1.35
