@@ -10,6 +10,9 @@ onix-legacy-api:
     enabled: false
 
   pods:
+    securityContext:
+      fsGroup: apache2
+
     initContainers:
       - name: volume-dirs-init-cntr
         image: busybox:1.35
