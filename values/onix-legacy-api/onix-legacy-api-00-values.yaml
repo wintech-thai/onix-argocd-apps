@@ -14,7 +14,15 @@ onix-legacy-api:
     image:
       name: asia-southeast1-docker.pkg.dev/its-artifact-commons/onix/onix-legacy-api
     imagePullSecrets:
-      - name: gar-image-pull # TODO : use External-Secret to create this
+      - name: gar-image-pull
+
+    volumeMounts:
+      - name: storage-dir
+        mountPath: /wis/data/storage
+    volumes:
+      - name: storage-dir
+        persistentVolumeClaim:
+          claimName: onix-data
 
   service:
     enabled: true
