@@ -11,7 +11,7 @@ onix-legacy-api:
 
   pods:
     securityContext:
-      fsGroup: apache2
+      fsGroup: 69690 # uid -g apache2
 
     initContainers:
       - name: volume-dirs-init-cntr
