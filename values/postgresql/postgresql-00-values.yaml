@@ -2,7 +2,10 @@ postgresql:
   enabled: true
   fullnameOverride: postgresql
   auth:
-    database: onix
+    username: onix_prod_acd_acdesign # Create user same name as DB
+    database: onix_prod_acd_acdesign
     existingSecret: postgres-secret
     secretKeys:
       adminPasswordKey: adminPasswordKey
+      userPasswordKey: adminPasswordKey
+
