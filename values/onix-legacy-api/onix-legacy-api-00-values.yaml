@@ -10,9 +10,9 @@ onix-legacy-api:
     enabled: false
 
   pods:
-    command:
-      - "cd /wis/system/bin; cat patch.xml | php dispatcher.php"
-    #args: []
+    command: ["/bin/bash"]
+    args: ["-c", "/wis/system/bin/patch.bash"]
+
     securityContext:
       fsGroup: 69690 # uid -g apache2
     strategy:
