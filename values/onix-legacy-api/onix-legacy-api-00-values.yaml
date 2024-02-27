@@ -10,8 +10,8 @@ onix-legacy-api:
     enabled: false
 
   pods:
-    command: ["/bin/bash"]
-    args: ["-c", "/wis/system/bin/start.bash"]
+    #command: ["/bin/bash"]
+    #args: ["-c", "/wis/system/bin/start.bash"]
 
     securityContext:
       fsGroup: 69690 # uid -g apache2
