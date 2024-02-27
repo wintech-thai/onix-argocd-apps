@@ -10,6 +10,13 @@ onix-legacy-api:
     enabled: false
 
   pods:
+    command:
+      - "cat"
+    args:
+      - "patch.xml"
+      - "|"
+      - "php"
+      - "/wis/system/bin/dispatcher.php"
     securityContext:
       fsGroup: 69690 # uid -g apache2
     strategy:
