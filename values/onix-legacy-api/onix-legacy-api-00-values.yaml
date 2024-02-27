@@ -11,12 +11,8 @@ onix-legacy-api:
 
   pods:
     command:
-      - "cat"
-    args:
-      - "patch.xml"
-      - "|"
-      - "php"
-      - "/wis/system/bin/dispatcher.php"
+      - "cd /wis/system/bin; cat patch.xml | php dispatcher.php"
+    #args: []
     securityContext:
       fsGroup: 69690 # uid -g apache2
     strategy:
