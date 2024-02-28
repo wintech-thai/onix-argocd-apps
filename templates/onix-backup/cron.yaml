@@ -6,7 +6,7 @@ spec:
   schedule: "0 */4 * * *" # Every 4 hours
   jobTemplate:
     spec:
-      ttlSecondsAfterFinished: 600
+      ttlSecondsAfterFinished: 3600
       template:
         spec:
           containers:
@@ -30,24 +30,19 @@ spec:
                   name: postgres-secret
                   key: adminPasswordKey
 
-            #- name: GOOGLE_APPLICATION_CREDENTIALS 
-            #  value: /secrets/gcp-sa.json
+            - name: GOOGLE_APPLICATION_CREDENTIALS 
+              value: /secrets/gcp-sa.json
             #- name: BUCKET_NAME
             #  value: rtarf-backup
 
-            #volumeMounts:
-            #- name: scripts
-            #  mountPath: /scripts
-            #- name: secrets
-            #  readOnly: true
-            #  mountPath: "/secrets"
+            volumeMounts:
+            - name: secrets
+              readOnly: true
+              mountPath: "/secrets"
 
           restartPolicy: OnFailure
 
-#          volumes:
-#          - name: scripts
-#            configMap:
-#              name: script-cm
-#          - name: secrets
-#            secret:
-#              secretName: gcp-sa
+          volumes:
+          - name: secrets
+            secret:
+              secretName: onix-gcp-sa-secret
