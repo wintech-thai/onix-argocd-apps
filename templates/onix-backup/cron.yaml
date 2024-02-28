@@ -17,18 +17,23 @@ spec:
             - /bin/sh
             args:
             - /scripts/backup-storage-and-db.bash
-            #env:
-            #- name: ES_USER
-            #  value: elastic
+            env:
+            - name: PG_DATABASE
+              value: onix_prod_acd_acdesign
+
+            - name: PG_USER
+              value: onix_prod_acd_acdesign
+
+            - name: PG_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: adminPasswordKey
+
             #- name: GOOGLE_APPLICATION_CREDENTIALS 
             #  value: /secrets/gcp-sa.json
             #- name: BUCKET_NAME
             #  value: rtarf-backup
-            #- name: ES_PASSWORD
-            #  valueFrom:
-            #    secretKeyRef:
-            #      name: es-soc-es-elastic-user
-            #      key: elastic
 
             #volumeMounts:
             #- name: scripts
