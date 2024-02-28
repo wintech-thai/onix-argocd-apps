@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
           - name: onix-backkup
-            image: asia-southeast1-docker.pkg.dev/its-artifact-commons/onix/onix-jobs:{{ .Values.onixBackupImageTag }}
+            image: asia-southeast1-docker.pkg.dev/its-artifact-commons/onix/onix-jobs:v0.0.2
             imagePullPolicy: IfNotPresent
             command:
             - /bin/sh
