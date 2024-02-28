@@ -1,2 +1,1 @@
-onixBackup:
-  imageTag: "<<image-tag>>"
+onixBackupImageTag: "<<image-tag>>"
