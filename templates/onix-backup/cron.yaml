@@ -21,6 +21,9 @@ spec:
             - name: PG_DATABASE
               value: onix_prod_acd_acdesign
 
+            - name: PG_HOST
+              value: postgresql
+
             - name: PG_USER
               value: onix_prod_acd_acdesign
 
