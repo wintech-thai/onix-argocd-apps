@@ -3,6 +3,7 @@ kind: CronJob
 metadata:
   name: onix-backup
 spec:
+  # kubectl create job --from=cronjob/onix-backup onix-backup-001 -n onix-dev
   schedule: "0 */4 * * *" # Every 4 hours
   jobTemplate:
     spec:
