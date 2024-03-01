@@ -10,6 +10,7 @@ spec:
       ttlSecondsAfterFinished: 3600
       template:
         spec:
+          serviceAccountName: onix-backup
           containers:
           - name: onix-backkup
             image: asia-southeast1-docker.pkg.dev/its-artifact-commons/onix/onix-jobs:{{ .Values.onixBackup.imageTag }}

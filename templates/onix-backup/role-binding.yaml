@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: onix-storage-backup-role-binding
+subjects:
+- kind: ServiceAccount
+  name: onix-backup
+roleRef:
+  kind: Role
+  name: onix-storage-backup-role
+  apiGroup: rbac.authorization.k8s.io
