@@ -37,6 +37,13 @@ spec:
 
             - name: GOOGLE_APPLICATION_CREDENTIALS 
               value: /secrets/gcp-sa.json
+
+            - name: NAMESPACE 
+              value: onix-{{ .Values.envAlias }}
+
+            - name: POD_NAME_PREFIX 
+              value: onix-{{ .Values.envAlias }}-onix-legacy-api
+
             #- name: BUCKET_NAME
             #  value: rtarf-backup
 
