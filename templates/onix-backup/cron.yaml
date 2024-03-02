@@ -20,6 +20,12 @@ spec:
             args:
             - /scripts/backup-storage-and-db.bash
             env:
+            - name: SLACK_URI
+              valueFrom:
+                secretKeyRef:
+                  name: slack-secret
+                  key: SLACK_URI
+
             - name: PG_DATABASE
               value: onix_prod_acd_acdesign
 
