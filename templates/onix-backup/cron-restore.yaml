@@ -1,0 +1,66 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: onix-restore
+spec:
+  # kubectl create job --from=cronjob/onix-restore onix-restore-001 -n onix-dev
+  schedule: "0 */4 * * *" # Every 4 hours
+  jobTemplate:
+    spec:
+      ttlSecondsAfterFinished: 3600
+      template:
+        spec:
+          serviceAccountName: onix-backup
+          containers:
+          - name: onix-backkup
+            image: asia-southeast1-docker.pkg.dev/its-artifact-commons/onix/onix-jobs:{{ .Values.onixBackup.imageTag }}
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            args:
+            - /scripts/restore-storage-and-db.bash
+            env:
+            - name: SLACK_URI
+              valueFrom:
+                secretKeyRef:
+                  name: slack-secret
+                  key: SLACK_URI
+
+            - name: PG_DATABASE
+              value: onix_prod_acd_acdesign
+
+            - name: PG_HOST
+              value: postgresql
+
+            - name: PG_USER
+              value: onix_prod_acd_acdesign
+
+            - name: PG_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: adminPasswordKey
+
+            - name: GOOGLE_APPLICATION_CREDENTIALS 
+              value: /secrets/gcp-sa.json
+
+            - name: NAMESPACE 
+              value: onix-{{ .Values.envAlias }}
+
+            - name: POD_NAME_PREFIX 
+              value: onix-{{ .Values.envAlias }}-onix-legacy-api
+
+            #- name: BUCKET_NAME
+            #  value: rtarf-backup
+
+            volumeMounts:
+            - name: secrets
+              readOnly: true
+              mountPath: "/secrets"
+
+          restartPolicy: OnFailure
+
+          volumes:
+          - name: secrets
+            secret:
+              secretName: onix-gcp-sa-secret
