@@ -10,11 +10,38 @@ onix-legacy-api:
     enabled: false
 
   pods:
+    securityContext:
+      fsGroup: 69690 # uid -g apache2
+    strategy:
+      type: Recreate
+    initContainers:
+      - name: volume-dirs-init-cntr
+        image: busybox:1.35
+        command:
+        - "/bin/mkdir"
+        args:
+        - "-p"
+        - "/wis/data/wip"
+        - "/wis/data/locked"
+        - "/wis/data/storage"
+        - "/wis/data/sessions"
+        volumeMounts:
+        - name: data-dir
+          mountPath: "/wis/data"
+
     controller: deployment
     image:
       name: asia-southeast1-docker.pkg.dev/its-artifact-commons/onix/onix-legacy-api
     imagePullSecrets:
-      - name: gar-image-pull # TODO : use External-Secret to create this
+      - name: gar-image-pull
+
+    volumeMounts:
+      - name: data-dir
+        mountPath: /wis/data
+    volumes:
+      - name: data-dir
+        persistentVolumeClaim:
+          claimName: onix-data
 
   service:
     enabled: true
