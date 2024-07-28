@@ -51,7 +51,7 @@ spec:
               value: onix-{{ .Values.envAlias }}-onix-legacy-api
 
             - name: SOURCE_BACKUP_FILE
-              value: gs://onix-v2-backup/bk-20240728-002.sql
+              value: gs://onix-v2-backup/temp/bk-20240728-002.sql
 
             volumeMounts:
             - name: secrets
