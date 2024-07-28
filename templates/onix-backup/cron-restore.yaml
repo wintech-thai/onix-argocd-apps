@@ -50,8 +50,8 @@ spec:
             - name: POD_NAME_PREFIX 
               value: onix-{{ .Values.envAlias }}-onix-legacy-api
 
-            #- name: BUCKET_NAME
-            #  value: rtarf-backup
+            - name: SOURCE_BACKUP_FILE
+              value: gs://onix-v2-backup/bk-20240728-002.sql
 
             volumeMounts:
             - name: secrets
