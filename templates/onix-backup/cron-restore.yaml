@@ -4,7 +4,7 @@ metadata:
   name: onix-restore
 spec:
   suspend: true
-  # Commend to dump : pg_dump --user postgres -c -Fp onix_prod_acd_acdesign > bk-20240728-002.sql
+  # Command to dump : pg_dump --user postgres -c -Fp onix_prod_acd_acdesign > bk-20240728-002.sql
   # kubectl create job --from=cronjob/onix-restore onix-restore-001 -n onix-dev
   schedule: "0 */4 * * *" # Every 4 hours
   jobTemplate:
@@ -53,7 +53,7 @@ spec:
               value: onix-{{ .Values.envAlias }}-onix-legacy-api
 
             - name: SOURCE_BACKUP_FILE
-              value: gs://onix-v2-backup/temp/bk-20240728-002.sql
+              value: gs://onix-v2-backup/temp/bk-20240731-001.sql
 
             volumeMounts:
             - name: secrets
