@@ -11,7 +11,7 @@ onix-legacy-api:
 
   pods:
     securityContext:
-      fsGroup: 69690 # uid -g apache2
+      fsGroup: 69690 # id -g apache2
     strategy:
       type: Recreate
     initContainers:
@@ -64,7 +64,7 @@ onix-legacy-api-aip:
 
   pods:
     securityContext:
-      fsGroup: 69690 # uid -g apache2
+      fsGroup: 69690 # id -g apache2
     strategy:
       type: Recreate
     initContainers:
