@@ -46,7 +46,7 @@ onix-legacy-api:
             optional: false
 
 # AIP company
-onix-legacy-aip:
+onix-legacy-api-aip:
   pods:
     replicas: 1
 
