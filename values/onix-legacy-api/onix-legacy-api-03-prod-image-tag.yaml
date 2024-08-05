@@ -2,4 +2,9 @@
 onix-legacy-api:
   pods:
     image:
-      tag: "develop-d194fca" #"v0.0.2"
+      tag: "main-74de8d2" #"v0.0.2"
+
+onix-legacy-api-aip:
+  pods:
+    image:
+      tag: "main-74de8d2"

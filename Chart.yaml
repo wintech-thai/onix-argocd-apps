@@ -12,6 +12,13 @@ dependencies:
     repository: "https://charts.visonneau.fr/"
     version: "0.0.14"
 
+  ### onix-legacy-api (AIP) ###
+  - name: "generic-app"
+    alias: onix-legacy-api-aip
+    condition: onix-legacy-api-aip.enabled
+    repository: "https://charts.visonneau.fr/"
+    version: "0.0.14"
+
   ### pgSQL ###
   - name: "postgresql"
     alias: postgresql
