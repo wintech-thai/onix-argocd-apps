@@ -2,9 +2,10 @@
 onix-legacy-api:
   pods:
     image:
-      tag: "main-74de8d2" #"v0.0.2"
+      tag: "v0.0.3"
 
 onix-legacy-api-aip:
   pods:
     image:
-      tag: "main-74de8d2"
+      tag: "v0.0.3"
+
