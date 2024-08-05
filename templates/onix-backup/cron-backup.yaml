@@ -72,7 +72,7 @@ metadata:
   name: onix-backup-aip
 spec:
   suspend: {{ .Values.isBackupSuspend }}
-  # kubectl create job --from=cronjob/onix-backup onix-backup-001 -n onix-dev
+  # kubectl create job --from=cronjob/onix-backup-aip onix-backup-aip-001 -n onix-prod
   schedule: "0 */4 * * *" # Every 4 hours
   jobTemplate:
     spec:
