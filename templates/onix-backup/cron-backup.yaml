@@ -96,7 +96,7 @@ spec:
                   key: SLACK_URI
 
             - name: PG_DATABASE
-              value: onix_prod_acd_acdesign
+              value: onix_prod_aip_acdesign
 
             - name: PG_HOST
               value: postgresql
