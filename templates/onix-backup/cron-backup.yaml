@@ -117,7 +117,7 @@ spec:
               value: onix-{{ .Values.envAlias }}
 
             - name: POD_NAME_PREFIX 
-              value: onix-{{ .Values.envAlias }}-onix-legacy-api
+              value: onix-{{ .Values.envAlias }}-onix-legacy-api-aip
 
             - name: EXTENSION
               value: aip
