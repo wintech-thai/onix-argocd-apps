@@ -2,9 +2,9 @@
 onix-legacy-api: # ACD company
   pods:
     image:
-      tag: "develop-30ab94b"
+      tag: "develop-4375912"
 
 onix-legacy-api-aip: # AIP company
   pods:
     image:
-      tag: "develop-30ab94b"
+      tag: "develop-4375912"
