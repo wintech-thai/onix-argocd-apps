@@ -8,3 +8,6 @@ postgresql:
     secretKeys:
       adminPasswordKey: adminPasswordKey
       userPasswordKey: adminPasswordKey
+
+  image:
+    repository: bitnamilegacy/postgresql
