@@ -1,5 +1,5 @@
 envGroup: nonprod
 envAlias: dev
 isBackupSuspend: true
-onixLegacyApiDomain: onix-legacy-api.acd-np.its-software-services.com
-onixAIPApiDomain: onix-legacy-api.aip-np.its-software-services.com
+onixLegacyApiDomain: onix-legacy-api1.acd-np.its-software-services.com
+onixAIPApiDomain: onix-legacy-api1.aip-np.its-software-services.com
